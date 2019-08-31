@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Password Manager</string>
+    <string-array name="id_type">
+        <item value="">Choose type</item>
+        <item value="Adha__ar">Adhaar</item>
+        <item value="Pan___Card">Pan Card</item>
+    </string-array>
+    <string-array name="website_type">
+        <item value="">Choose type</item>
+        <item value="educational">educational</item>
+        <item value="others">others</item>
+
+    </string-array>
+</resources>

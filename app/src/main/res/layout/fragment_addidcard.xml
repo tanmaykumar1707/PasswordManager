@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.IdCardAdd_Activity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/grad_bg"
+        android:layout_centerInParent="true"
+        >
+        <TextView
+            android:layout_marginTop="50dp"
+            android:id="@+id/heading_txtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Id Card"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="@color/design_default_color_primary"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/heading_txtView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Type"
+                    android:textSize="15dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/white"
+                    />
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                     android:textColor="@color/white"
+                    android:background="@drawable/et_bg"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name on Id Card"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter  Type"
+                    android:textColor="@color/white"
+                    android:background="@drawable/et_bg"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Id no."
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter  Type"
+                    android:textColor="@color/white"
+                    android:background="@drawable/et_bg"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conform Id no"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter  Type"
+                    android:textColor="@color/white"
+                    android:background="@drawable/et_bg"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Photo"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter  Type"
+                    android:textColor="@color/white"
+                    android:background="@drawable/et_bg"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Any Remarks(Optional) :"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter  Type"
+                    android:textColor="@color/white"
+                    android:background="@drawable/et_bg"/>
+
+            </LinearLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:text="ADD ID CARD"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
