@@ -30,12 +30,13 @@ public class SharedPrefManager {
         editor.putBoolean("status",data.isStatus());
         editor.putString("Message",data.getMessage());
 
-        editor.apply();
+        editor.commit();
     }
     public boolean isLoggedIn()
     {
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
-        return sharedPreferences.getString("id_user","-1")!="-1";
+        return  sharedPreferences.getBoolean("status",false);
+        // return sharedPreferences.getString("id_user","-1")!="-1";
     }
     public LoginResponse userData()
     {

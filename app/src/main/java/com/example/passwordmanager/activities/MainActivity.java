@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.btnSignup:
+
                 checkuser();
                 // progressDialog.dismiss();
                 break;
@@ -86,9 +88,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void checkuser(){
         final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
         progressDialog.setMessage("Please Wait Logging...");
+        progressDialog.setCancelable(false);
         progressDialog.show();
         String userid = user.getText().toString().trim();
-        String password = pass.getText().toString().trim();
+        String passw = pass.getText().toString().trim();
+
+
 
         if(userid.isEmpty()){
                progressDialog.dismiss();
@@ -96,13 +101,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 user.requestFocus();
                 return ;
         }
-        if(password.isEmpty()){
+        if(passw.isEmpty()){
             progressDialog.dismiss();
             pass.setError("Please Enter Correct Password");
             pass.requestFocus();
             return;
         }
-        Call<LoginResponse> call = RetrofitClient.getInstance().getApi().checkuser(userid,password);
+        Call<LoginResponse> call = RetrofitClient.getInstance().getApi().checkuser(userid,passw);
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -111,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (Lresponse != null) {
                     if(Lresponse.isStatus()) {
 
-                        Toast.makeText(MainActivity.this, Lresponse.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, Lresponse.getMessage()+Lresponse.getId_user(), Toast.LENGTH_LONG).show();
                         SharedPrefManager.getInstance(MainActivity.this).saveUser(Lresponse);
                         Intent LoginSuccess = new Intent(MainActivity.this,Home.class);
                          progressDialog.dismiss();
@@ -133,7 +138,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(MainActivity.this,"Some Error occurred Please Try again Later..!",Toast.LENGTH_LONG);
+                progressDialog.dismiss();
+                Log.d("pwdxx", "onFailure: "+t.getLocalizedMessage());
+                Toast.makeText(MainActivity.this,"Some Error occured!",Toast.LENGTH_LONG).show();
             }
         });
 

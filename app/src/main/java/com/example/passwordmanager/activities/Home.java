@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.passwordmanager.R;
 import com.example.passwordmanager.fragments.AddIdcard_fragment;
@@ -44,12 +45,11 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
     @Override
     protected void onStart() {
         super.onStart();
-        if(!SharedPrefManager.getInstance(this).isLoggedIn()){
-            Intent LoginSuccess = new Intent(Home.this,MainActivity.class);
+        Toast.makeText(getApplicationContext(),SharedPrefManager.getInstance(getApplicationContext()).userData().getId_user()+"",Toast.LENGTH_LONG).show();
+        if(!SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()){
+            Intent LoginSuccess = new Intent(getApplicationContext(),MainActivity.class);
             LoginSuccess.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(LoginSuccess);
-
-
         }
     }
 
